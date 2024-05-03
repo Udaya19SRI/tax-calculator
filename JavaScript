@@ -1,0 +1,43 @@
+function hideErrorTooltip(inputId) {
+  var input = document.getElementById(inputId);
+  var errorIcon = input.nextElementSibling;
+  var tooltip = errorIcon.nextElementSibling;
+  
+  errorIcon.style.display = "none";
+  tooltip.innerHTML = "";
+}
+
+function showErrorTooltip(inputId, message) {
+  var input = document.getElementById(inputId);
+  var errorIcon = input.nextElementSibling;
+  var tooltip = errorIcon.nextElementSibling;
+  
+  errorIcon.style.display = "inline-block";
+  tooltip.innerHTML = message;
+}function FindTax(){
+  var anincome = parseFloat(document.getElementById("anincome").value);
+  var exincome = parseFloat(document.getElementById("exincome").value);
+  var apincome = parseFloat(document.getElementById("apincome").value); 
+  var age = parseFloat(document.getElementById("age").value); 
+  var result = anincome + exincome - apincome;
+  var tax;
+  if(result <= 800000){
+    tax = 0;
+  } else {
+    if(age < 40){
+      tax = 0.30 * (anincome - 800000);
+    } else if(age >= 40 && age < 60){
+      tax = 0.40 * (anincome - 800000);
+    } else if(age >= 60){
+      tax = 0.10 * (anincome - 800000);
+    }
+  }
+  document.getElementById("resultBox").style.display = "block";
+  document.getElementById("result").innerHTML = "Tax: " + tax.toFixed(2);
+}
+
+// Add event listeners to input fields to call FindTax() function whenever they change
+document.getElementById("anincome").addEventListener("input", FindTax);
+document.getElementById("exincome").addEventListener("input", FindTax);
+document.getElementById("apincome").addEventListener("input", FindTax);
+document.getElementById("age").addEventListener("input", FindTax);
