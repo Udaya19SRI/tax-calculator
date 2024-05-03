@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Try assignment</title>
+    <link rel="stylesheet" href="tryass.css" />
+  </head>
+  <body>
+    <script src="./tryass.js"></script>
+    <div class="middle">
+      <form action="" onsubmit="event.preventDefault(); FindTax();">
+        <p>Enter gross annual income</p>
+        <div class="input-box">
+          <input
+            type="number"
+            name="anincome"
+            id="anincome"
+            min="400000"
+            placeholder="Enter gross annual income"
+            required
+          />
+          <span class="error-icon" onclick="hideErrorTooltip('anincome')"
+            >!</span
+          >
+          <div class="tooltip"></div>
+        </div>
+        <p>Enter extra income</p>
+        <div class="input-box">
+          <input
+            type="number"
+            name="exincome"
+            id="exincome"
+            placeholder="Enter extra income"
+            required
+          />
+          <span class="error-icon" onclick="hideErrorTooltip('exincome')"
+            >!</span
+          >
+          <div class="tooltip"></div>
+        </div>
+        <p>Enter age group</p>
+        <div class="input-box">
+          <input
+            type="number"
+            name="age"
+            id="age"
+            min="25"
+            max="75"
+            placeholder="age"
+            required
+          />
+          <span class="error-icon" onclick="hideErrorTooltip('age')">!</span>
+          <div class="tooltip"></div>
+        </div>
+        <p>Enter total applicable deductions</p>
+        <div class="input-box">
+          <input
+            type="number"
+            name="apincome"
+            id="apincome"
+            placeholder="Add total applicable deductions"
+          />
+          <span class="error-icon" onclick="hideErrorTooltip('apincome')"
+            >!</span
+          >
+          <div class="tooltip"></div>
+        </div>
+        <br />
+        <button type="submit" class="button-69">SUBMIT</button>
+      </form>
+    </div>
+    <div id="resultBox" style="display: none">
+      <h3>Result</h3>
+      <div id="result"></div>
+      <button class="button-20">Close</button>
+    </div>
+  </body>
+</html>
