@@ -5,7 +5,7 @@ This repository contains the code for my submission to the assignment that requi
 
 *Key Features*:
 User authentication
-Data input and validation
+Data input and validation.
 Responsive design for mobile and desktop
 
 *Technologies Used*:
